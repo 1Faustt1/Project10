@@ -1,0 +1,322 @@
+@import "mixins";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.header {
+	position: fixed;
+	z-index: 255;
+	top: 0;
+	left: 0;
+	width: 70px;
+	height: 100vh;
+	box-shadow: 4px -2px 10px gray;
+	background-color: white;
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	&__link {
+		text-decoration: none;
+		color: blue;
+		width: 70px;
+	}
+
+	// FIXME: задать размеры ссылки
+
+	&__img {
+		width: 50%;
+		margin: 15px;
+
+		&_planet {
+			margin-bottom: 0;
+		}
+	}
+
+	&__planet-name {
+		text-align: center;
+		margin-bottom: 15px;
+	}
+}
+
+.main {
+	padding-left: 75px;
+	// FIXME: Паддинг ^^^
+	&__header {
+		position: fixed;
+		z-index: 255;
+		top: 0;
+		right: 50%;
+		transform: translateX(50%);
+		margin: auto;
+		background-color: white;
+		width: 300px;
+		height: 55px;
+		line-height: 55px;
+		text-align: center;
+		box-shadow: 0 5px 10px gray;
+		border-radius: 0 0 10px 10px;
+
+		&-title {
+			color: #a0b9ff;
+			font-size: 35px;
+		}
+	}
+
+	&__facts {
+
+		&-container {
+			position: relative;
+			background-color: white;
+			z-index: 2;
+			width: 100%;
+			margin-top: 200px;
+			height: 200px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+
+			&-left {
+				width: 50%;
+
+				&-img {
+					width: 100%;
+					height: 200px;
+					border-radius: 0 15px 15px 0;
+					background: url("Материал/ч2/images/intro2.jpg") center/cover no-repeat;
+					color: white;
+					text-align: center;
+					line-height: 200px;
+					font-weight: bold;
+
+					// FIXME: фоновое изображение добавлять контейнеру (header-container)
+					//  текст должен занимать обычные размеры
+				}
+			}
+
+			&-right {
+				width: 50%;
+
+				&-text-container {
+					display: flex;
+					justify-content: center;
+					gap: 25px;
+				}
+			}
+
+			&-text {
+				text-align: center;
+				padding: 7px;
+				background-color: #e5ffe5;
+				border-radius: 15px;
+			}
+		}
+	}
+
+	&__about {
+		@include section-header;
+
+		&-container {
+			margin-left: 70px;
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			padding: 15px;
+
+			&-card {
+				width: calc(20% - 20px * 4);
+				height: 450px;
+				position: relative;
+				background-color: white;
+				z-index: 5;
+				border-radius: 15px;
+
+				// FIXME: ДОБАВИТЬ МИКСИНЫ В ПАРАМЕТРАМИ
+				&_1 {
+					background-image: url("Материал/ч2/images/plant0.jpg");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+				}
+
+				&_2 {
+					background-image: url("Материал/ч2/images/plant1.jpg");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+				}
+
+				&_3 {
+					background-image: url("Материал/ч2/images/plant2.jpg");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+				}
+
+				&_4 {
+					background-image: url("Материал/ч2/images/plant3.jpg");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+				}
+
+				&_5 {
+					background-image: url("Материал/ч2/images/plant4.jpg");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+				}
+
+				&-text {
+					// FIXME: ПЕРЕПИСАТЬ НА FLEX
+					&-top {
+						position: absolute;
+						top: 0;
+						left: 0;
+						background-color: #FFFFFF4C;
+						border-radius: 15px;
+						padding: 5px;
+					}
+
+					&-bottom {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						background-color: #FFFFFF4C;
+						border-radius: 15px;
+						padding: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	&__ecology {
+		@include section-header;
+
+		&-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&-1 {
+				@include ecology-img;
+				background-image: url("Материал/ч2/images/internet.jpg");
+			}
+
+			&-2 {
+				@include ecology-img;
+				background-image: url("Материал/ч2/images/events.jpg");
+			}
+
+			&-3 {
+				@include ecology-img;
+				background-image: url("Материал/ч2/images/friends.jpg");
+			}
+		}
+	}
+
+	&__study {
+		@include section-header;
+
+		&-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+
+			&-left {
+				width: 50%;
+				background: url("Материал/ч2/images/land0.jpg") center/cover no-repeat;
+				border-radius: 15px;
+				height: 250px;
+				position: relative;
+
+				&-img {
+					width: 100%;
+					height: 100px;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+
+					// FIXME: РАСПОЛОЖИТЬ FLEX'ом
+				}
+			}
+
+			&-right {
+				width: 50%;
+				text-align: center;
+				font-size: 15px;
+			}
+		}
+	}
+
+	&__request {
+		@include section-header;
+		margin-bottom: 50px;
+
+		&-form {
+			// FIXME: ПОДОБРАТЬ ШИРИНУ В %
+			//  padding добавить
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			gap: 20px;
+
+			&-input {
+				width: 700px;
+				// FIXME: ШИРИНА 100%
+				height: 40px;
+				border: none;
+				padding: 10px;
+				border-top: 1px solid black;
+				border-bottom: 1px solid black;
+				outline: none;
+			}
+
+			&-btn {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 10px;
+				padding: 5px;
+				background-color: white;
+				border-radius: 15px;
+				border: none;
+				outline: none;
+				box-shadow: 0 5px 20px gray;
+				cursor: pointer;
+				transition: 0.2s;
+
+				&:hover {
+					scale: 1.1;
+				}
+			}
+
+			&-img {
+				width: 25px;
+			}
+		}
+	}
+
+
+	&__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: url("Материал/ч1/images/bg.svg") center/cover no-repeat;
+		filter: hue-rotate(210deg) opacity(0.1);
+		width: 100%;
+		height: 100vh;
+	}
+}

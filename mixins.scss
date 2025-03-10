@@ -1,0 +1,36 @@
+@mixin section-header {
+	margin-top: 100px;
+
+	&-header {
+		height: 70px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: end;
+		gap: 20px;
+		margin-bottom: 20px;
+	}
+
+	&-title {
+
+	}
+
+	&-img {
+		width: 40px;
+	}
+}
+
+@mixin ecology-img {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	width: 33%;
+	height: 200px;
+	line-height: 200px;
+}
+// FIXME: mixin должен принимать url картинки ((
