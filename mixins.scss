@@ -33,5 +33,9 @@
 	width: 33%;
 	height: 200px;
 	line-height: 200px;
+
+	@media (max-width: 800px) {
+		width: 100%;
+	}
 }
 // FIXME: mixin должен принимать url картинки (сделал)
