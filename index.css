@@ -94,7 +94,7 @@
   width: 100%;
   margin-top: 200px;
   height: 100%;
-  padding: 50px;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,7 +164,7 @@
 .main__about-container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 15px;
 }
 @media (max-width: 1000px) {
@@ -265,6 +265,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 15px;
 }
 @media (max-width: 800px) {
   .main__ecology-container {
@@ -338,7 +339,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 15px;
   gap: 20px;
+}
+@media (max-width: 600px) {
+  .main__study-container {
+    flex-direction: column;
+  }
 }
 .main__study-container-left {
   width: 50%;
@@ -358,11 +365,6 @@
   width: 50%;
   text-align: center;
   font-size: 15px;
-}
-@media (max-width: 600px) {
-  .main__study-container-right {
-    font-size: 10px;
-  }
 }
 .main__request {
   margin-top: 100px;
