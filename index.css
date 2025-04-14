@@ -15,11 +15,23 @@
   box-shadow: 4px -2px 10px gray;
   background-color: white;
 }
+@media (max-width: 600px) {
+  .header {
+    width: 100%;
+    height: 70px;
+  }
+}
 .header__nav {
   display: flex;
   align-items: center;
   flex-direction: column;
   text-align: center;
+}
+@media (max-width: 600px) {
+  .header__nav {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 .header__link {
   text-decoration: none;
@@ -37,9 +49,19 @@
   text-align: center;
   margin-bottom: 15px;
 }
+@media (max-width: 600px) {
+  .header__planet-name {
+    display: none;
+  }
+}
 
 .main {
   padding-left: 70px;
+}
+@media (max-width: 600px) {
+  .main {
+    padding: 10px;
+  }
 }
 .main__header {
   position: fixed;
@@ -60,24 +82,40 @@
   color: #a0b9ff;
   font-size: 35px;
 }
+@media (max-width: 600px) {
+  .main__header {
+    display: none;
+  }
+}
 .main__facts-container {
   position: relative;
   background-color: white;
   z-index: 2;
   width: 100%;
   margin-top: 200px;
-  height: 200px;
+  height: 100%;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
+@media (max-width: 800px) {
+  .main__facts-container {
+    flex-direction: column;
+  }
+}
 .main__facts-container-left {
   width: 50%;
 }
+@media (max-width: 800px) {
+  .main__facts-container-left {
+    width: 100%;
+  }
+}
 .main__facts-container-left-img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   border-radius: 0 15px 15px 0;
   background: url("Материал/ч2/images/intro2.jpg") center/cover no-repeat;
   color: white;
@@ -85,13 +123,28 @@
   line-height: 200px;
   font-weight: bold;
 }
+@media (max-width: 800px) {
+  .main__facts-container-left-img {
+    border-radius: 15px;
+  }
+}
 .main__facts-container-right {
   width: 50%;
+}
+@media (max-width: 800px) {
+  .main__facts-container-right {
+    width: 100%;
+  }
 }
 .main__facts-container-right-text-container {
   display: flex;
   justify-content: center;
   gap: 25px;
+}
+@media (max-width: 800px) {
+  .main__facts-container-right-text-container {
+    flex-direction: column;
+  }
 }
 .main__facts-container-text {
   text-align: center;
@@ -109,11 +162,15 @@
   width: 40px;
 }
 .main__about-container {
-  margin-left: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 15px;
+}
+@media (max-width: 1000px) {
+  .main__about-container {
+    flex-direction: column;
+  }
 }
 .main__about-container-card {
   width: calc(20% - 80px);
@@ -122,6 +179,17 @@
   background-color: white;
   z-index: 5;
   border-radius: 15px;
+}
+@media (max-width: 1500px) {
+  .main__about-container-card {
+    width: calc(20% - 20px);
+  }
+}
+@media (max-width: 1000px) {
+  .main__about-container-card {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 .main__about-container-card_1 {
   background-image: url("Материал/ч2/images/plant0.jpg");
@@ -178,6 +246,12 @@
   border-radius: 15px;
   padding: 5px;
 }
+@media (max-width: 1000px) {
+  .main__about-container-card-text {
+    font-size: 25px;
+    padding: 10px;
+  }
+}
 .main__ecology {
   margin-top: 100px;
 }
@@ -191,6 +265,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 15px;
+}
+@media (max-width: 800px) {
+  .main__ecology-container {
+    flex-direction: column;
+  }
 }
 .main__ecology-container-1 {
   background-image: url("Материал/ч2/images/internet.jpg");
@@ -205,6 +285,11 @@
   height: 200px;
   line-height: 200px;
 }
+@media (max-width: 800px) {
+  .main__ecology-container-1 {
+    width: 100%;
+  }
+}
 .main__ecology-container-2 {
   background-image: url("Материал/ч2/images/events.jpg");
   background-repeat: no-repeat;
@@ -217,6 +302,11 @@
   width: 33%;
   height: 200px;
   line-height: 200px;
+}
+@media (max-width: 800px) {
+  .main__ecology-container-2 {
+    width: 100%;
+  }
 }
 .main__ecology-container-3 {
   background-image: url("Материал/ч2/images/friends.jpg");
@@ -231,6 +321,11 @@
   height: 200px;
   line-height: 200px;
 }
+@media (max-width: 800px) {
+  .main__ecology-container-3 {
+    width: 100%;
+  }
+}
 .main__study {
   margin-top: 100px;
 }
@@ -244,7 +339,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 15px;
   gap: 20px;
+}
+@media (max-width: 600px) {
+  .main__study-container {
+    flex-direction: column;
+  }
 }
 .main__study-container-left {
   width: 50%;
@@ -276,12 +377,22 @@
   width: 40px;
 }
 .main__request-form {
-  padding: 0 250px;
+  padding: 20px 250px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 20px;
+}
+@media (max-width: 1200px) {
+  .main__request-form {
+    padding: 20px 100px;
+  }
+}
+@media (max-width: 800px) {
+  .main__request-form {
+    padding: 20px 20px;
+  }
 }
 .main__request-form-input {
   width: 100%;
